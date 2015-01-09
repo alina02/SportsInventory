@@ -1,0 +1,13 @@
+<%= form_tag('/items', method: "post") do %>
+  <%= label_tag(:item_name, "Name of Item:") %>
+  <%= text_field_tag(:item_name, params[:item_name]) %><br>
+  <%= label_tag(:category, "Category")%>
+  <%= text_field_tag(:category)%><br>
+  <%= label_tag(:brand_name, "Name of Brand:") %>
+  <%= text_field_tag(:brand_name) %><br>
+  <%= label_tag(:cost, "Price of the item")%>
+  <%= text_field_tag(:cost)%><br>
+  <%= label_tag(:quantity, "Quantity")%>
+  <%= text_field_tag(:quantity)%><br>
+  <%= submit_tag("Add") %>
+<% end%>
