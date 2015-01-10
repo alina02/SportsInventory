@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150109084416) do
+ActiveRecord::Schema.define(:version => 20150110084314) do
+
+  create_table "brands", :force => true do |t|
+    t.string   "brand_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "brands_items", :id => false, :force => true do |t|
+    t.integer "brand_id"
+    t.integer "item_id"
+  end
 
   create_table "items", :force => true do |t|
     t.string   "item_name"
@@ -19,5 +30,17 @@ ActiveRecord::Schema.define(:version => 20150109084416) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "prices", :force => true do |t|
+    t.float    "cost"
+    t.integer  "quantity"
+    t.integer  "brand_id"
+    t.integer  "item_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "prices", ["brand_id"], :name => "index_prices_on_brand_id"
+  add_index "prices", ["item_id"], :name => "index_prices_on_item_id"
 
 end

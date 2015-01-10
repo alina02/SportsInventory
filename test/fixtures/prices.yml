@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cost: 1.5
+  quantity: 1
+  brands: 
+  items: 
+
+two:
+  cost: 1.5
+  quantity: 1
+  brands: 
+  items: 
